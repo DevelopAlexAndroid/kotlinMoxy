@@ -1,4 +1,4 @@
-package dev.moxy
+package dev.moxy.screens.activity.main
 
 import com.arellomobile.mvp.MvpView
 

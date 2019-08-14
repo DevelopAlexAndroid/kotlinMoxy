@@ -1,4 +1,4 @@
-package dev.moxy
+package dev.moxy.screens.activity.main
 
 import android.util.Log
 import com.arellomobile.mvp.InjectViewState

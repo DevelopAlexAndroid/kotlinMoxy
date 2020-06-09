@@ -1,7 +1,7 @@
 package dev.moxy.repository.db
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
+import androidx.room.Database
+import androidx.room.RoomDatabase
 import dev.moxy.repository.model.mNote
 
 @Database(entities = [mNote::class], version = 1)

@@ -1,9 +1,9 @@
 package dev.moxy.adapters
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import dev.moxy.R
 import dev.moxy.repository.model.mNote
 import kotlinx.android.synthetic.main.added_word_item.view.*

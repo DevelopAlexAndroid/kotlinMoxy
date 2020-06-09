@@ -1,7 +1,8 @@
 package dev.moxy.repository.model
 
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
 
 @Entity
 class mNote (@PrimaryKey(autoGenerate = true)

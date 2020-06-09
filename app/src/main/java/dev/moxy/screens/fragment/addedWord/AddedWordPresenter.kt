@@ -1,8 +1,6 @@
 package dev.moxy.screens.fragment.addedWord
 
 import android.util.Log
-import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
 import dev.moxy.App.Companion.TAG
 import dev.moxy.R
 import dev.moxy.repository.addedWordRepository.AddedWordRepositoryImpl
@@ -11,6 +9,8 @@ import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import moxy.InjectViewState
+import moxy.MvpPresenter
 
 @InjectViewState
 class AddedWordPresenter : MvpPresenter<AddedWordView>() {

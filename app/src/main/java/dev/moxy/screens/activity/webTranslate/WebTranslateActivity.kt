@@ -1,7 +1,7 @@
 package dev.moxy.screens.activity.webTranslate
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import dev.moxy.R
 
 class WebTranslateActivity : AppCompatActivity() {

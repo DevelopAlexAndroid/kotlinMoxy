@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.arellomobile.mvp.MvpAppCompatFragment
-import com.arellomobile.mvp.presenter.InjectPresenter
 import dev.moxy.R
+import moxy.MvpAppCompatFragment
+import moxy.presenter.InjectPresenter
 
 class DictionaryFragment : MvpAppCompatFragment(), DictionaryView {
     @InjectPresenter

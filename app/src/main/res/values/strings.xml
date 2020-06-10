@@ -3,4 +3,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addnote">AddNote</string>
+    <string name="info">info</string>
+    <string name="back">back</string>
+    <string name="go_to_dictionary">go to dictionary</string>
+    <string name="replace">replace</string>
 </resources>

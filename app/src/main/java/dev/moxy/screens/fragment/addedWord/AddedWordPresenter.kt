@@ -1,39 +1,38 @@
 package dev.moxy.screens.fragment.addedWord
 
 import android.util.Log
+import dev.moxy.App
 import dev.moxy.App.Companion.TAG
-import dev.moxy.R
+import dev.moxy.Screens
 import dev.moxy.repository.addedWordRepository.AddedWordRepositoryImpl
 import dev.moxy.repository.model.mNote
 import io.reactivex.Completable
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import moxy.InjectViewState
 import moxy.MvpPresenter
+import ru.terrakok.cicerone.Router
 
-@InjectViewState
 class AddedWordPresenter : MvpPresenter<AddedWordView>() {
 
     private val repositoryImpl = AddedWordRepositoryImpl()
     private val compositeDisposable = CompositeDisposable()
+    private var router: Router = App.cicerone.router
+
+    fun onForward() {
+        router.navigateTo(Screens.Dictionary)
+    }
+
+    fun onBack() {
+        router.exit()
+    }
 
     fun addNewWord(mNote: mNote) {
-        var d = Completable
+        compositeDisposable.add(Completable
             .fromRunnable {
                 repositoryImpl.addNote(mNote)
             }
             .subscribeOn(Schedulers.io()).subscribe {
                 Log.d(TAG, "added ")
-            }
-    }
-
-    fun createWordList() {
-        compositeDisposable.add(repositoryImpl.getListNote()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { list ->
-                viewState.showWords(list)
             })
     }
 

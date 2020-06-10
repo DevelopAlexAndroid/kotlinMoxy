@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.room.Room
 import dev.moxy.repository.db.AppDatabase
 import ru.terrakok.cicerone.Cicerone
-import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.Router
 
 class App : Application() {
@@ -13,29 +12,20 @@ class App : Application() {
     companion object {
         var TAG = "kotlinMoxy"
         lateinit var appDatabase: AppDatabase
-        lateinit var App: Application
+        lateinit var INSTANCE: Application
+        lateinit var cicerone: Cicerone<Router>
     }
-
-    private lateinit var cicerone: Cicerone<Router>
 
     override fun onCreate() {
         super.onCreate()
         Log.d(TAG, "onCreateApp")
 
-        App = this
+        INSTANCE = this
         cicerone = Cicerone.create()
 
         appDatabase = Room
             .databaseBuilder(this, AppDatabase::class.java, "database")
             .build()
 
-    }
-
-    public fun getRouter(): Router {
-        return cicerone.router
-    }
-
-    public fun getNavigationHolder(): NavigatorHolder {
-        return cicerone.navigatorHolder
     }
 }

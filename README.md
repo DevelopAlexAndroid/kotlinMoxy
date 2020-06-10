@@ -1,4 +1,4 @@
-# kotlinMoxy
+# Stack
 kotlin:
 Moxy 2.x.x
 Cicerone 5.x.x

@@ -1,20 +1,19 @@
-package dev.moxy.screens.fragment.infoApp
+package dev.moxy.screens.fragment.autor
 
 import dev.moxy.App
 import dev.moxy.Screens
 import moxy.MvpPresenter
 import ru.terrakok.cicerone.Router
 
-class InfoAppPresenter : MvpPresenter<InfoAppView>() {
+class AuthorPresenter : MvpPresenter<AuthorView>() {
 
     private var router: Router = App.cicerone.router
 
-    fun navigateToAuthor() {
-        router.navigateTo(Screens.AuthorFragment)
+    fun backToTranslate() {
+        router.backTo(Screens.AddedWord)
     }
 
     fun onBack() {
         router.exit()
     }
-
 }

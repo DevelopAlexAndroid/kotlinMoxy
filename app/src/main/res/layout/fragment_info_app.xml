@@ -5,10 +5,18 @@
         android:layout_height="match_parent"
         tools:context=".screens.fragment.infoApp.InfoAppFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/hello_blank_fragment" />
+
+    <Button
+            android:id="@+id/but_autor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/owner"
+            android:layout_gravity="bottom|center"
+            android:gravity="center" />
 
 </FrameLayout>

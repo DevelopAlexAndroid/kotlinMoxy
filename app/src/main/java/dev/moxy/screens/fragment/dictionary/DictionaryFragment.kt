@@ -12,8 +12,9 @@ import kotlinx.android.synthetic.main.fragment_dictionary.*
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 
-class DictionaryFragment : MvpAppCompatFragment(), DictionaryView,
-    OnBackPressed {
+class DictionaryFragment : MvpAppCompatFragment(R.layout.fragment_added_word),
+    DictionaryView, OnBackPressed {
+
     @InjectPresenter
     lateinit var dictionaryPresenter: DictionaryPresenter
 

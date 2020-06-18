@@ -36,6 +36,14 @@ class AddedWordPresenter : MvpPresenter<AddedWordView>() {
             })
     }
 
+    fun addNote(mNote: mNote) {
+        App.appDatabase.noteDao().insert(mNote)
+    }
+
+    fun navigateToInfo() {
+        router.navigateTo(Screens.InfoApp)
+    }
+
     fun fixWordTranslate(translate: String, id: Int) {
         repositoryImpl.fixNote(translate, id)
     }
@@ -43,4 +51,8 @@ class AddedWordPresenter : MvpPresenter<AddedWordView>() {
     fun deleteWord(id: Int) {
         repositoryImpl.deleteNote(id)
     }
+
+    /*fun getList(): List<mNote>{
+        return App.appDatabase.noteDao().getAll()
+    }*/
 }

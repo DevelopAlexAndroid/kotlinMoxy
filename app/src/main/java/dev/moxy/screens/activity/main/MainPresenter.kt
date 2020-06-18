@@ -19,15 +19,4 @@ class MainPresenter(var name: String) : MvpPresenter<MainView>() {
         router.navigateTo(Screens.AddedWord)
     }
 
-    fun addNote(mNote: mNote) {
-        App.appDatabase.noteDao().insert(mNote)
-    }
-
-    fun navigateToInfo() {
-        router.navigateTo(Screens.InfoApp)
-    }
-
-    /*fun getList(): List<mNote>{
-        return App.appDatabase.noteDao().getAll()
-    }*/
 }

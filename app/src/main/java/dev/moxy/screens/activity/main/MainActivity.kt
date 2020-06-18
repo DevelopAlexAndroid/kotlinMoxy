@@ -5,9 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import dev.moxy.App
 import dev.moxy.R
-import dev.moxy.repository.model.mNote
 import dev.moxy.screens.activity.OnBackPressed
-import kotlinx.android.synthetic.main.activity_main.*
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
@@ -15,11 +13,16 @@ import ru.terrakok.cicerone.Navigator
 import ru.terrakok.cicerone.android.support.SupportAppNavigator
 import ru.terrakok.cicerone.commands.Command
 
-
+//  Приложение словарь слов для запоминания.
+// (фрагмент)1 добавление/удаление слов
+// (фрагмент)2 список слов при клике на элемент(слово) появляется перевод
+// (фрагмент)3 информация о приложении
+// (фрагмент)4 кто создатель
+// свайп на удаление и редактирование
+// основной экран содержит кнопку перехода на другую активити с webView переводчиком,
+// и фрагменты (анимации)
 class MainActivity : MvpAppCompatActivity(R.layout.activity_main), MainView {
-    //приложение словарь слов для запоминания. (фрагмент)Экран 1 список слов при клике на элемент(слово) появляется перевод
-//(фрагмент)2 экран добавление/удаление слов список слов с кнопкой добавить свайп на удаление и редактирование
-//основной экран содержит кнопку перехода на другую активити с webView переводчиком, и фрагменты (анимации)
+
     @InjectPresenter
     lateinit var mainPresenter: MainPresenter
 
@@ -43,12 +46,6 @@ class MainActivity : MvpAppCompatActivity(R.layout.activity_main), MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        add_note.setOnClickListener {
-            addNote()
-        }
-        info_app.setOnClickListener {
-            mainPresenter.navigateToInfo()
-        }
     }
 
     override fun onResumeFragments() {
@@ -73,13 +70,6 @@ class MainActivity : MvpAppCompatActivity(R.layout.activity_main), MainView {
         } else {
             this.finish()
         }
-    }
-
-    private fun addNote() {
-        Thread {
-            val mNote = mNote(text = "тест", translate = "text")
-            mainPresenter.addNote(mNote)
-        }.start()
     }
 
 }
